@@ -10,7 +10,6 @@ public class Simulation {
         File file = new File("phase1.txt");
         Scanner fileScanner = new Scanner(file);
         ArrayList<Item> itemList = new ArrayList<>();   
-         int c=0;
 
         while(fileScanner.hasNextLine()){
             Item item = new Item();
