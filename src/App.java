@@ -3,25 +3,16 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Simulation sim = new Simulation();
+        Simulation simulation = new Simulation();
+        ArrayList<Item> items = simulation.loadItems();
+        ArrayList<Rocket> u1Rockets = simulation.loadU1(items);
+        ArrayList<Rocket> u2Rockets = simulation.loadU2(items);
 
-        ArrayList<Item> itemList = sim.loadItems();
-
-        for(int i=0;i<itemList.size();i++)
-        {
-            Item k = itemList.get(i);
-            System.out.println(k.getWeight());
-        }
-        ArrayList<Rocket> rocketList = sim.loadU1(itemList);
-
-
-        // for(Rocket i : rocketList) {
-        //     System.out.println(i.availableWeight);
+        // for(Rocket r : u1Rockets)
+        // {
+        //     System.out.println(r.getavailabe());
         // }
-
-        // sim.loadU2(itemList);
-
-        // sim.runSimulation(rocketList);
-
+        System.out.println(simulation.runSimulation(u1Rockets));
+        System.out.println(simulation.runSimulation(u2Rockets));
     }
 }

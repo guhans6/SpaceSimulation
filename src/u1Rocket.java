@@ -1,44 +1,39 @@
 public class u1Rocket extends Rocket{
 
-    final int COST = 100;
-    final int MAX_CARGO_WEIGHT = 10;
-    final int MAX_WEIGHT = 18;
-    int availableWeight;
-
-
-    u1Rocket() { 
-        availableWeight = MAX_WEIGHT - MAX_CARGO_WEIGHT;
-    }
+    static final int COST = 100;
+    int MAX_CARGO_WEIGHT = 8000;
+    static int MAX_WEIGHT = 18000;
+    int availableWeight = 8000;
     
     @Override
     public boolean launch(){
-   
-        double chance = 0.05 * (this.MAX_CARGO_WEIGHT - this.availableWeight) / MAX_CARGO_WEIGHT;
-        return chance < Math.random();
+        // System.out.println("launch"); 
+        // System.out.println(MAX_CARGO_WEIGHT +" "+ availableWeight);
+        double chance = 0.05 * (this.MAX_CARGO_WEIGHT - availableWeight) / MAX_CARGO_WEIGHT;
+
+        return chance < Math.random() /12 ;
     }
+
+    @Override
+    public int getavailabe()
+    {
+        return this.availableWeight;
+    }
+
 
     
     @Override
     public boolean land() {
-        // System.out.println("aa");
+        // System.out.println("land");
         // System.out.println(this.MAX_CARGO_WEIGHT - this.availableWeight);
-        double chance = 0.01 * (MAX_CARGO_WEIGHT - availableWeight) / MAX_CARGO_WEIGHT;
+            double chance = 0.01 * (MAX_CARGO_WEIGHT - availableWeight) / MAX_CARGO_WEIGHT;
 
-
-        double ran = Math.random();
-        System.err.println(chance +" "+ ran);
-        if (chance < ran)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+            return chance < Math.random()/12;
     }
-    
 
-
-
+    @Override
+    public String toString() {
+        return "u1Rocket [COST=" + COST + ", MAX_CARGO_WEIGHT=" + MAX_CARGO_WEIGHT + "]";
+    }
     
 }

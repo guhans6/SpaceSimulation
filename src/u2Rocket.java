@@ -1,8 +1,8 @@
 public class u2Rocket extends Rocket {
     
-    final int COST = 120; // Million
-    final int MAX_CARGO_WEIGHT = 18;  // Tonnes
-    final int MAX_WEIGHT = 29;  // Tonnes
+    final int COST = 120; 
+    final int MAX_CARGO_WEIGHT = 18;  
+    final int MAX_WEIGHT = 29;  
     int availableWeight;
     Item item;
     double chance;
