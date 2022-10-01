@@ -17,8 +17,6 @@ public class Rocket implements SpaceShip {
         return true;
     }
 
-//     canCarry: a method that takes an Item as an argument and returns true if the rocket can carry such item or false if it will exceed the weight limit.
-// carry: a method that also takes an Item object and updates the current weight of the rocket.
   
     @Override
     public boolean canCarry(Item item) {

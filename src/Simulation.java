@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class Simulation {
 
-    ArrayList<Item> loadItems() throws FileNotFoundException{
+    ArrayList<Item> loadItems(String phase) throws FileNotFoundException{
 
-        File file = new File("phase1.txt");
+        File file = new File(phase+".txt");
         Scanner fileScanner = new Scanner(file);
         ArrayList<Item> itemList = new ArrayList<>();   
 
